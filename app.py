@@ -79,7 +79,7 @@ def get_llm_response(prompt: str, expert_type: str) -> str:
     response = chain.invoke(
         {
             "input": prompt,
-            "chat_history": [],  # 将来的にチャット履歴を実装する場合に使用
+            "chat_history": [],
         }
     )
 
@@ -89,7 +89,7 @@ def get_llm_response(prompt: str, expert_type: str) -> str:
 # Streamlitアプリのタイトル設定
 st.title("大人な飲み物専門家に質問してみよう！👨‍🍳")
 
-# サイドバーに専門家選択用のラジオボタンを配置
+# サイドバーに専門家選択用のラジオボタンを配置 https://qiita.com/MK32A/items/b7984f0419b7dd8d679c
 expert_type = st.sidebar.radio(
     "どちらに相談しますか？：", ["バリスタ(コーヒー)", "ソムリエ(ワイン)"]
 )
