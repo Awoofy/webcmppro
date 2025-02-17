@@ -55,7 +55,8 @@ def create_chain(expert_type: str):
     )
 
     # チェーンの構築
-    chain = prompt | llm | output_parser
+    chain = prompt | llm | output_parser # これでchainを表せるらしい↓
+    # https://zenn.dev/sunwood_ai_labs/articles/langchain-runnable-tutorial
 
     return chain
 
