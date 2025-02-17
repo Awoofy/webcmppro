@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: python-dev
+    volumes:
+      - .:/app
+      - ${HOME}/.ssh:/home/developer/.ssh:ro
+      - python-packages:/home/developer/.local/lib/python3.11/site-packages
+    ports:
+      - "8501:8501"  # Streamlit default port
+    environment:
+      - PYTHONPATH=/app
+    tty: true
+    init: true
+    command: /bin/bash
+    user: developer
+
+volumes:
+  python-packages:
