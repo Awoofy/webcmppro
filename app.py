@@ -9,7 +9,7 @@ from langchain_openai import ChatOpenAI
 
 # 環境変数の読み込み
 # load_dotenv()
-api_key = st.secrets["openai"]["api_key"]
+api_key = st.secrets["openai"]["OPEN_AI_KEY"]
 
 # OpenAI APIの設定
 llm = ChatOpenAI(
