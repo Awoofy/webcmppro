@@ -11,7 +11,7 @@ load_dotenv()
 
 # OpenAI APIの設定
 llm = ChatOpenAI(
-    model_name="gpt-3.5-turbo",
+    model_name="gpt-4o-mini",
     temperature=0.7,
 )
 
@@ -29,7 +29,7 @@ def create_chain(expert_type: str):
         Chain: 設定されたチェーン
     """
     # 専門家タイプに応じてシステムプロンプトを設定
-    if expert_type == "コーヒーの専門家":
+    if expert_type == "バリスタ(コーヒー)":
         system_prompt = """
         あなたはコーヒーに関する深い知識を持つバリスタです。
         コーヒーの種類、焙煎方法、抽出方法、味わい、香り、産地など、
@@ -81,8 +81,8 @@ st.title("大人な飲み物専門家に質問してみよう！👨‍🍳")
 
 # サイドバーに専門家選択用のラジオボタンを配置
 expert_type = st.sidebar.radio(
-    "専門家を選択してください：",
-    ["コーヒーの専門家", "ワインの専門家"]
+    "どちらに相談しますか？：",
+    ["バリスタ(コーヒー)", "ソムリエ(ワイン)"]
 )
 
 # メインエリアに入力フォームを配置
